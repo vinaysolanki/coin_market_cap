@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["vinaysolanki2005@gmail.com"]
   spec.summary       = %q{Coin Market Cap gem}
   spec.description   = %q{Ruby gem to fetch Crypto currency prices from Coin Market Cap}
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/vinaysolanki/coin_market_cap"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -19,6 +19,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "nokogiri", "~> 1.6", ">=1.6.1"
+
   spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake", "~> 10.1", ">=10.1.1"
+  spec.add_development_dependency "rspec", "~> 2.14", ">=2.14.1"
 end
