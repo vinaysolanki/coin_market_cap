@@ -18,17 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-Create a new coin object
+### Price
 
 	bitcoin = CoinMarketCap::Coin.new('bitcoin')
 
-Fetch price in USD
-
 	bitcoin.price
-
-Fetch price in BTC
+	#=> 847.63
 
 	bitcoin.price_btc
+	#=> 1.00
 
 ## Contributing
 
