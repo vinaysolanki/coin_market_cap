@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-### Price
+### Price:
 
 	bitcoin = CoinMarketCap::Coin.new('bitcoin')
 
