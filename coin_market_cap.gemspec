@@ -6,6 +6,7 @@ require 'coin_market_cap/version'
 Gem::Specification.new do |spec|
   spec.name          = "coin_market_cap"
   spec.version       = CoinMarketCap::VERSION
+  spec.platform      = Gem::Platform::RUBY
   spec.authors       = ["Vinay Solanki"]
   spec.email         = ["vinaysolanki2005@gmail.com"]
   spec.summary       = %q{Coin Market Cap gem}
