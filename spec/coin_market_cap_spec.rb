@@ -14,4 +14,9 @@ describe CoinMarketCap do
 		expect(coin.price).to be_kind_of(Float)
 	end
 
+	it "should return price of coin in BTC" do
+		coin = CoinMarketCap::Coin.new('bitcoin')
+		expect(coin.price_btc).to eq(1.00)
+	end
+
 end
