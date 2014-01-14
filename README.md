@@ -1,6 +1,6 @@
-# CoinMarketCap
+# Coin Market Cap
 
-TODO: Write a gem description
+Ruby gem to fetch Crypto currency prices from Coin Market Cap
 
 ## Installation
 
@@ -18,7 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a new coin object
+
+	bitcoin = CoinMarketCap::Coin.new('bitcoin')
+
+Fetch price in USD
+
+	bitcoin.price
+
+Fetch price in BTC
+
+	bitcoin.price_btc
 
 ## Contributing
 
