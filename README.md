@@ -25,9 +25,6 @@ Or install it yourself as:
 	bitcoin.price
 	#=> 847.63
 
-	bitcoin.price_btc
-	#=> 1.00
-
 ## Contributing
 
 1. Fork it ( http://github.com/<my-github-username>/coin_market_cap/fork )

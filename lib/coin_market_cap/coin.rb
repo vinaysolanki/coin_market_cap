@@ -1,44 +1,32 @@
 module CoinMarketCap
 
+  COIN_MARKET_CAP_URL = "https://coinmarketcap.com/"
+
 	# Coin class
   class Coin
 		attr_accessor :coin
 
     def initialize(coin)
       @coin = coin.downcase
-    end
-
-    def sample_message
-      "Hello, World!"
+      @currencies = fetch_coin_prices
     end
 
 		def price
-			coin_price = fetch_coin_price(@coin, 'USD')
-			coin_price
-		end
-
-		def price_btc
-			coin_price = fetch_coin_price(@coin, 'BTC')
-			coin_price
+			@currencies[@coin]
 		end
 
 		private
 
-		def fetch_coin_price(coin, price_type)
-			doc = Nokogiri::HTML(open("http://www.coinmarketcap.com"))
+		def fetch_coin_prices
+			doc = Nokogiri::HTML(open(COIN_MARKET_CAP_URL))
 			currencies = {}
 
 			doc.css("#currencies tbody tr").each do |coin|
-				currency = coin.css(".no-wrap.currency-name a").text.downcase
-				if price_type == 'USD'
-					price = coin.css("td[4] a").attribute('data-usd').value.to_f
-				else
-					price = coin.css("td[4] a").attribute('data-btc').value.to_f
-				end
+        currency = coin.css("td a.currency-name-container").text.downcase.gsub(" ", "_")
+        price = coin.css("td .price").attribute('data-usd').value.to_f
 				currencies[currency] = price
 			end
-
-			currencies[coin]
+			currencies
 		end
 
   end
